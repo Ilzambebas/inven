@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeControler;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BarangControler;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Return_layak_PakaiController;
@@ -25,15 +27,15 @@ Route::post('/cek_login', [AuthController::class, 'cek_login'])->name('check');
 Route::get('/logout', [AuthController::class,'logout'])->name('check');
 
 Route::middleware(['auth','check_role:admin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return 'Halaman admin';
-    })->name('admin');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('admin');
 
-    //Data Master (User)
-    // Route::get('/', [UserController::class,'index']);
-    // Route::post('/user/store', [UserController::class,'store']);
-    // Route::post('/user/{id}/update', [UserController::class,'update']);
-    // Route::get('/user/{id}/destroy', [UserController::class,'destroy']);
+    Route::prefix('dashboard')->group(function () {
+        //Data Master (User)
+        Route::resource('user',UserController::class);
+    });
+    // Route::post('/user/store', [UserControler::class,'store']);
+    // Route::post('/user/{id}/update', [UserControler::class,'update']);
+    // Route::get('/user/{id}/destroy', [UserControler::class,'destroy']);
 
     //  //Data Master (Barang)
     // Route::get('/barang', [BarangController::class,'index']);
