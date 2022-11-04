@@ -2,14 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeControler;
-use App\Http\Controllers\UserControler;
-use App\Http\Controllers\BarangControler;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KategoriControler;
-use App\Http\Controllers\Return_layak_PakaiControler;
-use App\Http\Controllers\Return_layak_ReturnControler;
-use App\Http\Controllers\Return_RusakControler;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\Return_layak_PakaiController;
+use App\Http\Controllers\Return_layak_ReturnController;
+use App\Http\Controllers\Return_RusakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,21 +30,21 @@ Route::middleware(['auth','check_role:admin'])->group(function () {
     })->name('admin');
 
     //Data Master (User)
-    // Route::get('/user', [UserControler::class,'index']);
-    // Route::post('/user/store', [UserControler::class,'store']);
-    // Route::post('/user/{id}/update', [UserControler::class,'update']);
-    // Route::get('/user/{id}/destroy', [UserControler::class,'destroy']);
+    // Route::get('/', [UserController::class,'index']);
+    // Route::post('/user/store', [UserController::class,'store']);
+    // Route::post('/user/{id}/update', [UserController::class,'update']);
+    // Route::get('/user/{id}/destroy', [UserController::class,'destroy']);
 
     //  //Data Master (Barang)
-    // Route::get('/barang', [BarangControler::class,'index']);
+    // Route::get('/barang', [BarangController::class,'index']);
     //     //Data Master (Kategori)
-    // Route::get('/kategori', [KategoriControler::class,'index']);
+    // Route::get('/kategori', [KategoriController::class,'index']);
     //  //Data Master (Return_layak_Pakai)
-    // Route::get('/Return_layak_Pakai', [Return_layak_PakaiControler::class,'index']);
+    // Route::get('/Return_layak_Pakai', [Return_layak_PakaiController::class,'index']);
     //  //Data Master (Return_layak_Repair)
-    // Route::get('/Return_layak_Repair', [Return_layak_RepairControler::class,'index']);
+    // Route::get('/Return_layak_Repair', [Return_layak_RepairController::class,'index']);
     //  //Data Master (Return_Rusak)
-    // Route::get('/Return_Rusak', [Return_RusakControler::class,'index']);
+    // Route::get('/Return_Rusak', [Return_RusakController::class,'index']);
 
 });
 
@@ -54,8 +53,8 @@ Route::middleware(['auth','check_role:user'])->group(function () {
     Route::get('/', function () {
         return 'halaman user';
     })->name('user');
-    // Route::get('home',[HomeController::class,'index'])->name('home');
+    Route::get('home',[HomeController::class,'index'])->name('home');
 });
 
 
-// Route::get('/home', [HomeController::class,'home']);
+Route::get('/home', [HomeController::class,'home']);
