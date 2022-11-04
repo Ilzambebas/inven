@@ -5,7 +5,7 @@
 	<title>Return Barang</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="/assets/img/icon.ico" type="image/x-icon"/>
-	
+
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
@@ -32,7 +32,7 @@
 		<div class="main-header" data-background-color="purple">
 			<!-- Logo Header -->
 			<div class="logo-header">
-				
+
 				<a href="#" class="logo">
 					<img src="/assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
 				</a>
@@ -52,7 +52,7 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg">
-				
+
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
@@ -79,7 +79,7 @@
 							<ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
 								<li>
 									<div class="dropdown-title d-flex justify-content-between align-items-center">
-										Messages 									
+										Messages
 										<a href="#" class="small">Mark all as read</a>
 									</div>
 								</li>
@@ -97,7 +97,7 @@
 								<li>
 									<div class="dropdown-title">notification</div>
 								</li>
-								
+
 								<li>
 									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
 								</li>
@@ -127,7 +127,7 @@
 								</li>
 							</ul>
 						</li>
-						
+
 					</ul>
 				</div>
 			</nav>
@@ -135,7 +135,7 @@
 		</div>
 		<!-- Sidebar -->
 		<div class="sidebar">
-			
+
 			<div class="sidebar-wrapper scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user">
@@ -156,7 +156,7 @@
 							<a href="/home">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								
+
 							</a>
 						</li>
 						<li class="nav-item">
@@ -168,7 +168,7 @@
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="/user">
+										<a href="{{ route('user.index') }}">
 											<span class="sub-item">Data User</span>
 										</a>
 									</li>
@@ -200,7 +200,7 @@
 			</div>
 		</div>
 	@yield ('content')
-		
+
 	</div>
 	<!--   Core JS Files   -->
 	<script src="/assets/js/core/jquery.3.2.1.min.js"></script>
@@ -219,7 +219,7 @@
 	<script src="/assets/js/ready.min.js"></script>
 	<!-- Azzara DEMO methods, don't include it in your project! -->
 	<script src="/assets/js/setting-demo.js"></script>
-	
+
 	<script >
 		$(document).ready(function() {
 			$('#add-row').DataTable({
