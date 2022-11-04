@@ -39,7 +39,7 @@
 									</div>
 								</div>
 								<div class="card-body">
-									
+
 
 									<div class="table-responsive">
 										<table id="add-row" class="display table table-striped table-hover" >
@@ -51,12 +51,11 @@
 													<th>Action</th>
 												</tr>
 											</thead>
-											
+
 											<tbody>
-												@php $no=1; @endphp
 												@foreach($user as $row)
 												<tr>
-													<td>{{ $no++ }}</td>
+													<td>{{ $loop->iteration }}</td>
 													<td>{{ $row->name }}</td>
 													<td>{{ $row->level }}</td>
 													<td>
@@ -74,7 +73,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
 <div class="modal fade" id="modalAddUser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -106,7 +105,7 @@
 										<option value="user">User</option>
 									</select>
 								</div>
-						
+
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
@@ -142,11 +141,11 @@
 								<div class="form-group">
 									<label>Password</label>
 									<select class="form-control" name="level" required>
-										<option @if({{$d->level }} =="admin") echo "checked";@endif value="admin">Admin</option>
-										<option @if({{$d->level }} =="gudang") echo "checked";@endif value="user">User</option>
+										<option {{ $d->level  == "admin" ? 'checked' : '' }}value="admin">Admin</option>
+										<option {{ $d->level == "user"  ? 'checked' : '' }} value="user">User</option>
 									</select>
 								</div>
-						
+
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
@@ -175,7 +174,7 @@
 								<div class="form-group">
 								<h4>Apakah Anda Yakin Ingin Menghapus Data Ini ?</h4>
 								</div>
-						
+
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
